@@ -6,7 +6,7 @@ RAG (Retrieval-Augmented Generation) is used so the chatbot can fetch real info 
 
 Pinecone stores and retrieves your resume data in vector form, making it fast and scalable to search relevant info for each question.
 
-![My Personal Portfolio AI Chatbot - nikhilpujari.in](./screenshots/chatbot.png)
+
 
 ### 1️⃣ Clone the Project & Set Up Python Environment
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 - Go to “Indexes” → **Create Index**
 
-  - Name: `nikhil-resume-index`
+  - Name: `sourabh-resume-index`
   - Metric: `cosine`
   - Dimension: `1536` (for OpenAI embeddings)
   - Pods: `1 pod`, `starter tier`
