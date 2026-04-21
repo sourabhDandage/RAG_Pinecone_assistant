@@ -73,7 +73,7 @@ python3 index_resume.py
 
 Once this has run successfully you will see generated indexes on Pinecone console:
 
-![Pinecone-index-created](./screenshots/Pinecone-index-created.png)
+
 
 ---
 
