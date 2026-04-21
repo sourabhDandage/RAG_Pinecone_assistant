@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sourabh Dandage - AI Chatbot</title>
+  <link rel="stylesheet" href="chatbot.css" />
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-header">
+      <h2>Chat with Sourabh's Resume AI</h2>
+    </div>
+
+    <div id="chatbox" class="chatbox"></div>
+
+    <div id="input-container" class="input-container">
+      <input type="text" id="userInput" placeholder="Ask me anything..." autocomplete="off" />
+      <button id="sendButton">Send</button>
+    </div>
+
+    <div id="loadingContainer" class="loading-container" style="display: none;">
+      <div class="dot-loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>

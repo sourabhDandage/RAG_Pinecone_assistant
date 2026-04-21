@@ -1,0 +1,227 @@
+#chatbot-container {
+  font-family: "Arial", sans-serif;
+  background-color: #000000; /* Change as per your color scheme */
+  padding: 20px;
+  max-width: 570px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 80px; /* Adjust as needed */
+  right: 20px;
+  z-index: 999;
+}
+
+#chatbot-header {
+  background-color: #df0e62; /* Or any color that fits your theme */
+  color: white; /* Choose a color that contrasts well with the background */
+  padding: 10px;
+  font-weight: bold;
+  font-size: 24px; /* Adjust size as needed */
+  text-align: center;
+  border-top-left-radius: 10px; /* Match the border radius of your chatbox */
+  border-top-right-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds depth */
+  font-family: "Arial", sans-serif; /* Optional: Change font family as you like */
+}
+
+#chatbox {
+  background-color: #303130;
+  border: none;
+  border-bottom-left-radius: 10px; /* Match the border radius of your chatbox */
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input area */
+#input-area {
+  display: flex;
+  margin-top: 10px;
+}
+
+#userInput {
+  flex-grow: 1;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #df0e62; /* Change as per your color scheme */
+  border: none;
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e84285; /* Darker shade for hover effect */
+}
+
+/* Chat message bubbles */
+.chat-message {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 18px;
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 0.9em;
+}
+
+.user-message {
+  background-color: #e84285; /* Your chosen color for user messages */
+  color: white;
+  align-self: flex-end;
+}
+
+.chatbot-message {
+  background-color: #e79bb9; /* Lighter shade for chatbot messages */
+  color: #333;
+  align-self: flex-start;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #chatbot-container {
+    width: 100%;
+    max-width: none;
+    bottom: 70px; /* Adjusted to provide space for the button */
+    right: 0;
+    border-radius: 0 0 0 0;
+    padding: 10px;
+    height: calc(
+      100% - 70px
+    ); /* Adjust height based on header and input area */
+    box-shadow: none;
+    border: 2px solid #000; /* Added border to ensure visibility */
+  }
+
+  #chatbox {
+    height: calc(
+      100% - 120px
+    ); /* Adjust height based on header and input area */
+    border-radius: 0 0 0 0;
+  }
+
+  #chatbot-header {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  #input-area {
+    margin-top: 0;
+    padding: 10px;
+    background-color: #303130;
+    border-top: 1px solid #444;
+  }
+
+  #userInput {
+    padding: 10px;
+    margin-right: 5px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  .chat-message {
+    font-size: 1em;
+    max-width: 90%;
+  }
+
+  #chatbot-toggle {
+    position: fixed; /* Position fixed to place it at a corner */
+    bottom: 10px; /* Position it slightly above the bottom */
+    right: 10px; /* Position it slightly from the right */
+    width: auto; /* Ensure it doesn't cover the full width */
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    font-size: 14px; /* Smaller font size for a smaller button */
+    border-radius: 10px; /* Apply a border-radius for better aesthetics */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+}
+
+#microphoneButton {
+  margin-left: 7px; /* Space between the input box and the button */
+  margin-right: 7px;
+  background-color: transparent; /* No fill */
+  border: 2px solid #df0e62; /* Border color */
+  color: #df0e62; /* Text color */
+  padding: 5px 10px; /* Padding for better appearance */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  border-radius: 15px; /* Rounded corners */
+  outline: none; /* Remove default outline */
+}
+
+#microphoneButton:hover {
+  background-color: #f9f9f9; /* Light background color on hover */
+}
+
+#microphoneButton[disabled] {
+  position: relative;
+  cursor: not-allowed;
+}
+
+#microphoneButton[disabled]::after {
+  content: attr(title);
+  color: red;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #df0e62;
+  padding: 2px 5px;
+  border-radius: 3px;
+  display: none;
+  font-size: 12px;
+  z-index: 1000;
+}
+
+#microphoneButton[disabled]:hover::after {
+  display: block;
+}
+
+.loading-container {
+  display: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.loading {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.loading:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+  border-radius: 50%;
+  border: 4px solid #df0e62;
+  border-color: #df0e62 transparent #df0e62 transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
