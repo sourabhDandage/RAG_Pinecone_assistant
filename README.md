@@ -52,7 +52,7 @@ Add your keys:
 ```env
 OPENAI_API_KEY=your-openai-key
 PINECONE_API_KEY=your-pinecone-key
-INDEX_NAME=nikhil-resume-index
+INDEX_NAME=sourabh-resume-index
 ```
 
 ---
@@ -98,7 +98,7 @@ Run this command in your terminal to test the chatbot:
 ```bash
 curl -X POST http://127.0.0.1:5004/chat \
   -H "Content-Type: application/json" \
-  -d '{"query": "What experience does Nikhil have with AI or ML?"}'
+  -d '{"query": "What experience does Sourabh have with AI or ML?"}'
 ```
 
 ✅ If everything’s working, you'll get a JSON response from the backend with an answer based on your resume.
